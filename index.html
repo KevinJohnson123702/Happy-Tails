@@ -62,6 +62,13 @@
       background-color: #45a088;
     }
 
+    select {
+      padding: 12px;
+      font-size: 1em;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
     footer {
       padding: 20px;
       font-size: 0.85em;
@@ -90,13 +97,14 @@
       <li>🐹 Small Animals</li>
     </ul>
 
-    <p><strong>Select your service below to open Gmail with a pre-filled booking template:</strong></p>
-
-    <a class="book-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=kpj5331@gmail.com&su=Happy%20Tails%20Booking%20-%20Dog%20Walking&body=Hi%20Happy%20Tails,%0A%0AI'd%20like%20to%20book%20DOG%20WALKING.%0A%0AName:%0APet%20(type%20%26%20name):%0ADate(s):%0ADuration:%0A%0AThanks!" target="_blank">🐕 Book Dog Walking</a>
-
-    <a class="book-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=kpj5331@gmail.com&su=Happy%20Tails%20Booking%20-%20Pet%20Sitting&body=Hi%20Happy%20Tails,%0A%0AI'd%20like%20to%20book%20PET%20SITTING.%0A%0AName:%0APet:%0ADate(s):%0AVisits%20per%20day:%0A%0AThanks!" target="_blank">🏠 Book Pet Sitting</a>
-
-    <a class="book-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=kpj5331@gmail.com&su=Happy%20Tails%20Booking%20-%20Dog%20Training&body=Hi%20Happy%20Tails,%0A%0AI'd%20like%20to%20book%20DOG%20TRAINING.%0A%0AName:%0APet:%0AGoals:%0ADate(s):%0A%0AThanks!" target="_blank">🎓 Book Dog Training</a>
+    <p><strong>Select a service and click “Book Now” to open Gmail with a pre-filled template:</strong></p>
+    <select id="service-select">
+      <option value="Dog walking">🐕 Dog Walking</option>
+      <option value="Pet sitting">🏠 Pet Sitting</option>
+      <option value="Dog training">🎓 Dog Training</option>
+    </select>
+    <br>
+    <a class="book-btn" id="book-btn" href="#" target="_blank">🐾 Book Now</a>
 
     <p style="margin-top:12px;color:#2f7f6f;font-weight:bold;">Thanks for booking! Once you send the email, we’ll get back to you soon 🐾</p>
   </section>
@@ -128,5 +136,20 @@
   <footer>
     &copy; 2026 Happy Tails Dog Sitting & Training
   </footer>
+
+  <script>
+    const select = document.getElementById('service-select');
+    const bookBtn = document.getElementById('book-btn');
+
+    function updateLink() {
+      const service = select.value;
+      let bodyText = `Hi Happy Tails,%0A%0AI'd like to book ${service}.%0A%0AName:%0APet (type & name):%0ADate(s):%0ATime:%0AAddress:%0A%0AThanks!`;
+      const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=kpj5331@gmail.com&su=Happy Tails Booking - ${encodeURIComponent(service)}&body=${bodyText}`;
+      bookBtn.href = gmailLink;
+    }
+
+    select.addEventListener('change', updateLink);
+    updateLink(); // initialize
+  </script>
 </body>
 </html>
