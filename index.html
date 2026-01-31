@@ -185,10 +185,6 @@
       <img src="home-visits.jpg" alt="Home Visits">
       <span>Home visits</span>
     </div>
-    <div class="service-item">
-      <img src="daycare.jpg" alt="Daycare">
-      <span>Daycare</span>
-    </div>
   </section>
 
   <section class="pricing" id="pricing">
@@ -224,24 +220,4 @@
 
     bookButton.addEventListener("click", () => {
       const email = "kpj5331@gmail.com";
-      const subject = encodeURIComponent("Happy Tails Booking");
-      const body = encodeURIComponent("Hi Kevin,\n\nPet type:\nService:\nDate:\nTime:\nAddress:\n\nThanks!");
-
-      const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
-
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-      if (isMobile) {
-        window.location.href = mailtoLink;
-      } else {
-        const win = window.open(gmailUrl, "_blank");
-        if (win) win.focus();
-      }
-
-      confirmation.style.display = "block";
-    });
-  </script>
-
-</body>
-</html>
+      const subject = encodeURIComponent("Happy T
