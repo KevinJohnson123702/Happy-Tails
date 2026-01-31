@@ -158,25 +158,27 @@
   </footer>
 
   <script>
-    document.getElementById("bookNowBtn").addEventListener("click", function() {
+    const bookButton = document.getElementById("bookNowBtn");
+    const confirmation = document.getElementById("confirmation");
+
+    bookButton.addEventListener("click", () => {
       const email = "kpj5331@gmail.com";
       const subject = encodeURIComponent("Happy Tails Booking");
       const body = encodeURIComponent("Hi Kevin,\n\nPet type:\nService:\nDate:\nTime:\nAddress:\n\nThanks!");
+
       const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
 
-      // Detect mobile devices
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
       if (isMobile) {
-        window.location.href = mailtoLink; // open mail app
+        window.location.href = mailtoLink;
       } else {
-        // Desktop: open Gmail in new tab
         const win = window.open(gmailUrl, "_blank");
         if (win) win.focus();
       }
 
-      document.getElementById("confirmation").style.display = "block";
+      confirmation.style.display = "block";
     });
   </script>
 </body>
