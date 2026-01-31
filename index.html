@@ -134,10 +134,15 @@
 
     <section class="contact">
     <h2>Contact</h2>
-    <p>Call / Text: <a href="tel:14069016441">406-901-6441</a></p>
+    <p>Call / Text: 406-901-6441</p>
+    <p>Venmo: <a href="https://venmo.com/Kevin-Johnson-2698" target="_blank">@Kevin-Johnson-2698</a></p>
     <p>Email: <a href="mailto:kpj5331@gmail.com">kpj5331@gmail.com</a></p>
 
-    <a class="book-btn" href="mailto:kpj5331@gmail.com?subject=Happy%20Tails%20booking&body=Hi%20Kevin,%0A%0AService:%0APet%20type:%0AAddress:%0ADate:%0ATime:%0A%0AThanks!">Book now</a>
+    <a id="bookNow" href="mailto:kpj5331@gmail.com?subject=Happy Tails booking&body=Hi Kevin,%0A%0AService:%0APet type:%0AAddress:%0ADate:%0ATime:%0A%0AThanks!" style="display:inline-block;margin-top:15px;padding:14px 24px;background:#2f7f6f;color:white;border-radius:8px;font-size:1.1em;">Book now</a>
+
+    <p id="confirmMsg" style="display:none;margin-top:15px;color:#2f7f6f;font-weight:bold;">
+      Thanks for booking! Once you send the email, we’ll get back to you soon 🐾
+    </p>
   </section>
 
   <footer>
@@ -169,5 +174,10 @@
     select.addEventListener('change', updateLink);
     updateLink(); // initialize
   </script>
+<script>
+  document.getElementById('bookNow').addEventListener('click', function () {
+    document.getElementById('confirmMsg').style.display = 'block';
+  });
+</script>
 </body>
 </html>
