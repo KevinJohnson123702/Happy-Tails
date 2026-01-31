@@ -18,6 +18,12 @@
       color: white;
       padding: 30px 10px;
     }
+    header img {
+      width: 120px;
+      max-width: 40%;
+      height: auto;
+      margin-bottom: 15px;
+    }
     header h1 {
       margin: 0;
       font-size: 2em;
@@ -71,6 +77,7 @@
     /* Mobile tweaks */
     @media (max-width: 600px) {
       header h1 { font-size: 1.6em; }
+      header img { width: 80px; }
       .services, .pricing, .hours, .contact { padding: 15px 10px; }
       .book-now { padding: 10px 20px; font-size: 1em; }
     }
@@ -78,6 +85,7 @@
 </head>
 <body>
   <header>
+    <img src="logo.png" alt="Happy Tails Logo">
     <h1>Happy Tails Dog Sitting & Training</h1>
     <p>Lolo, Montana</p>
     <button class="book-now" id="bookNowBtn">Book Now</button>
