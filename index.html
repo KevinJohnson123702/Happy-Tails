@@ -21,7 +21,7 @@
       position: relative;
     }
 
-    header img {
+    header img.logo {
       width: 150px;
       max-width: 45%;
       height: auto;
@@ -31,6 +31,14 @@
       background-color: rgba(255,255,255,0.2);
       padding: 5px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    header img.hero {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
 
     header h1 {
@@ -63,6 +71,21 @@
       max-width: 600px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: left;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .service-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      margin-right: 10px;
+      object-fit: cover;
+      border: 2px solid #2f7f6f;
     }
 
     ul { list-style: disc inside; padding-left: 20px; }
@@ -104,7 +127,8 @@
 
     @media (max-width: 600px) {
       header h1 { font-size: 1.6em; }
-      header img { width: 100px; }
+      header img.logo { width: 100px; }
+      header img.hero { max-height: 150px; }
       .services, .pricing, .hours, .contact { padding: 15px 10px; }
       .book-now { padding: 10px 20px; font-size: 1em; }
     }
@@ -112,7 +136,8 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Happy Tails Logo">
+    <img src="logo.png" alt="Happy Tails Logo" class="logo">
+    <img src="dog-hero.jpg" alt="Happy dogs" class="hero">
     <h1>Happy Tails Dog Sitting & Training</h1>
     <p>Lolo, Montana</p>
     <button class="book-now" id="bookNowBtn">Book Now</button>
@@ -121,13 +146,26 @@
 
   <section class="services">
     <h2>Services</h2>
-    <ul>
-      <li>Dog walking & training</li>
-      <li>Cat sitting</li>
-      <li>Small animals</li>
-      <li>Home visits</li>
-      <li>Daycare</li>
-    </ul>
+    <div class="service-item">
+      <img src="dog-walking.jpg" alt="Dog Walking">
+      <span>Dog walking & training</span>
+    </div>
+    <div class="service-item">
+      <img src="cat-sitting.jpg" alt="Cat Sitting">
+      <span>Cat sitting</span>
+    </div>
+    <div class="service-item">
+      <img src="small-animals.jpg" alt="Small Animals">
+      <span>Small animals</span>
+    </div>
+    <div class="service-item">
+      <img src="home-visits.jpg" alt="Home Visits">
+      <span>Home visits</span>
+    </div>
+    <div class="service-item">
+      <img src="daycare.jpg" alt="Daycare">
+      <span>Daycare</span>
+    </div>
   </section>
 
   <section class="pricing">
